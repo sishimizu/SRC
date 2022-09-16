@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<!--{% load static %}-->
+{% load widget_tweaks %}
+{% block title %} 得点入力 {% endblock %}
+
+{% block contents %}
+<div class="container">
+  <h1>{{title}}</h1>
+    <table class ="table table-hover table table-striped" >
+      <form action="{% url 'index' %}"  method="post">
+        {% csrf_token %}
+        <tr>
+          <td>
+            {{ form.run.label_tag }}
+          </td>
+          <td>
+            {{ form.run }}
+          </td>
+        </tr>  
+        <tr>
+          <td>
+            {{ form.team.label_tag }}
+          </td>
+          <td>
+            {{ form.team }}
+          </td>
+        </tr>         
+        <tr>
+          <td>
+            {{ form.m1_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m1_cnt }}
+          </td>
+        </tr> 
+        <tr>
+          <td>
+            {{ form.m2_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m2_cnt }}
+          </td>
+        </tr> 
+        <tr>
+          <td>
+            {{ form.m2kami_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m2kami_cnt }}
+          </td>
+        </tr> 
+        <tr>
+          <td>
+            {{ form.m3_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m3_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m3kami_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m3kami_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m4_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m4_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m4kami_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m4kami_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m5_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m5_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m6_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m6_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m6kami_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m6kami_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.m7_cnt.label_tag }}
+          </td>
+          <td>
+            {{ form.m7_cnt }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.bonus1.label_tag }}
+          </td>
+          <td>
+            {{ form.bonus1 }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.bonus2.label_tag }}
+          </td>
+          <td>
+            {{ form.bonus2 }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.perfect.label_tag }}
+          </td>
+          <td>
+            {{ form.perfect }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ form.clear_time.label_tag }}
+          </td>
+          <td>
+            {{ form.clear_time |add_class:"counter" }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <figure class="time">
+              <button class="start" type="button">スタート</button>
+              <button class="stop" type="button">ストップ</button>
+              <button class="reset" type="button">リセット</button>
+              <input type="submit" value = "送信">
+            </figure>
+          </td>
+        </tr>
+      </form>
+    </table>
+    
+</div>
+
+{% endblock %}
+{% block script %}
+<script src="{% static 'score\js\timer.js' %}"></script>
+{% endblock %}

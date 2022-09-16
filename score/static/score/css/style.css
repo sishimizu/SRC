@@ -1,0 +1,16 @@
+table{
+  text-align: left;
+  font-size: large;
+}
+h1{
+  color: red;
+  
+}
+
+th,td,tr{
+  padding: 10px;
+  font-size: 60px;
+}
+
+.time {text-align:center}
+.counter {font-size:xx-large;margin-top:.83em;margin-bottom:.83em}
