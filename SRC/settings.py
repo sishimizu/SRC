@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'e!iudte(e^$#!=5avm)ytjk%tdjk^t)(tk+&z--w16-s#s8stl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.pythonanywhere.com', '{|shimizu|}.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', '.pythonanywhere.com', '{|shimizu|}.pythonanywhere.com']
 
 
 # Application definition
