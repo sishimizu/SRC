@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
-<!--{% load static %}-->
+{% load static %}
 {% load widget_tweaks %}
 {% block title %} 得点入力 {% endblock %}
 
@@ -8,160 +8,164 @@
 <div class="container">
   <h1>{{title}}</h1>
     <table class ="table table-hover table table-striped" >
+        <!--<thead>
+        <tr>
+            <th scope="col" style="width: 65%"></th>
+            <th scope="col" style="width: 35%"></th>
+        </tr>-->
       <form action="{% url 'index' %}"  method="post">
         {% csrf_token %}
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.run.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.run }}
           </td>
-        </tr>  
+        </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.team.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.team }}
           </td>
-        </tr>         
+        </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m1_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m1_cnt }}
           </td>
-        </tr> 
+        </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m2_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m2_cnt }}
           </td>
-        </tr> 
+        </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m2kami_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m2kami_cnt }}
           </td>
-        </tr> 
+        </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m3_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m3_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m3kami_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m3kami_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m4_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m4_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m4kami_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m4kami_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m5_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m5_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m6_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m6_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m6kami_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m6kami_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.m7_cnt.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.m7_cnt }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.bonus1.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.bonus1 }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.bonus2.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.bonus2 }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.perfect.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.perfect }}
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="width: 65%">
             {{ form.clear_time.label_tag }}
           </td>
-          <td>
+          <td style="width: 35%">
             {{ form.clear_time |add_class:"counter" }}
           </td>
         </tr>
         <tr>
-          <td>
             <figure class="time">
-              <button class="start" type="button">スタート</button>
-              <button class="stop" type="button">ストップ</button>
-              <button class="reset" type="button">リセット</button>
-              <input type="submit" value = "送信">
+              <button class="start" type="button" style ="width:30%; height:70px;">スタート</button>
+              <button class="stop" type="button" style ="width:30%; height:70px;">ストップ</button>
+              <button class="reset" type="button" style ="width:30%; height:70px;">リセット</button>
             </figure>
-          </td>
+
+          <td><input type="submit" value = "送信"></td>
         </tr>
       </form>
+      <!--</thead>-->
     </table>
-    
 </div>
 
 {% endblock %}
 {% block script %}
-<script src="{% static 'score\js\timer.js' %}"></script>
+<script src="{% static 'js/timer.js' %}"></script>
 {% endblock %}
