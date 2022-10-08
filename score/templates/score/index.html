@@ -158,7 +158,7 @@
               <button class="reset" type="button" style ="width:30%; height:70px;">リセット</button>
             </figure>
 
-          <td><input type="submit" value = "送信"></td>
+          <td><input type="submit" value = "送信" id="send"></td>
         </tr>
       </form>
       <!--</thead>-->
@@ -167,5 +167,6 @@
 
 {% endblock %}
 {% block script %}
-<script src="{% static 'js/timer.js' %}"></script>
+<script src="{% static 'score/js/timer.js' %}"></script>
+<script src="{% static 'score/js/vali.js' %}"></script>
 {% endblock %}

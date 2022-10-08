@@ -30,24 +30,30 @@ class RunChoices(models.TextChoices):
 
 #データベースの項目設定
 class Score(models.Model):
-    team = models.CharField(max_length=50,choices=TeamChoices.choices)
-    run = models.CharField(max_length=50,choices=RunChoices.choices)
-    m1_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m2_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m2kami_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m3_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m3kami_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m4_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m4kami_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
+    CntChoices = [
+        (0,0),
+        (1,1),
+        (2,2),
+        (3,3)
+    ]
+    team = models.CharField(max_length=50,choices=TeamChoices.choices,blank=False)
+    run = models.CharField(max_length=50,choices=RunChoices.choices,blank=False)
+    m1_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m2_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m2kami_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m3_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m3kami_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m4_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m4kami_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
     m5_cnt = models.BooleanField(default=False)
-    m6_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
-    m6kami_cnt = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
+    m6_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
+    m6kami_cnt = models.IntegerField(choices=CntChoices,blank=False,default=0)
     m7_cnt = models.BooleanField(default=False)
-    bonus1=models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)],default=0)
+    bonus1=models.IntegerField(choices=CntChoices,blank=False,default=0)
     bonus2=models.BooleanField(default=False)
     perfect = models.BooleanField(default=False)
-    clear_time = models.CharField(default="", max_length=10)
+    clear_time = models.CharField(default="", max_length=10,blank=True)
     rank = models.IntegerField(null=True)
-    total=models.IntegerField(default=0)
+    total=models.IntegerField(default=0 ,blank=True)
     def __str__(self):
         return self.team

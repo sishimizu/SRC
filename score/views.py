@@ -21,9 +21,9 @@ class ScoreView(TemplateView):
   #得点入力のページにPOSTでアクセスした場合はフォームの内容をヴァリデーションして保存
   #順位の表示ページに飛ぶ
   def post(self,request):
-     self.params['form'] =ScoreForm(request.POST)
-     form =self.params['form']
-     if form.is_valid():
+    self.params['form'] =ScoreForm(request.POST)
+    form =self.params['form']
+    if form.is_valid():
       form.save()
       return redirect(to='/rank')
   #ランクのページに飛んだ時の処理

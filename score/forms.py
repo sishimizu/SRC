@@ -5,8 +5,8 @@ from .models import Score
 class ScoreForm(forms.ModelForm):
   class Meta:
     model = Score
-    fields =('run','team','m1_cnt','m2_cnt','m2kami_cnt','m3_cnt','m3kami_cnt','m4_cnt','m4kami_cnt','m5_cnt','m6_cnt','m6kami_cnt','m7_cnt','bonus1','bonus2','perfect','clear_time',)
-    labels ={
+    fields =('run','team','m1_cnt','m2_cnt','m2kami_cnt','m3_cnt','m3kami_cnt','m4_cnt','m4kami_cnt','m5_cnt','m6_cnt','m6kami_cnt','m7_cnt','bonus1','bonus2','perfect','clear_time')
+    labels = {
       'run':'走行',
       'team':'チーム名',
       'm1_cnt':'基地一秒ストップ',

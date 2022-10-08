@@ -1,0 +1,3 @@
+HTTPSレスポンスが返ってこないというエラーはis_valiedがFalseになるため
+is_valiedがFalseになるのはm6_cnt,m6kami_cntの数値に関係がある様子。
+Disabledの状態だと数値を入力したことにならないらしい。
